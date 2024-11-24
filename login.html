@@ -23,6 +23,27 @@
     />
   </head>
   <body>
+    <div
+      class="w-100 poppins d-flex justify-content-between align-items-center theme"
+    >
+      <div class="d-flex justify-content-center align-items-center ms-5">
+        <p class="m-0 text-light fs-2">Dash</p>
+      </div>
+      <div class="d-flex mx-5 gap-3">
+        <a
+          href="login.html"
+          class="btn btn-success rounded-pill w-auto px-4 my-3 shadow-lg"
+        >
+          Log In
+        </a>
+        <a
+          href="register.html"
+          class="btn btn-light border rounded-pill w-auto p-2 px-4 my-3 shadow-lg"
+        >
+          Sign Up
+        </a>
+      </div>
+    </div>
     <div class="login-container poppins text-dark py-4 px-4 rounded shadow-lg">
       <h2>Login</h2>
       <form id="loginForm">
@@ -44,12 +65,8 @@
             required
           />
         </div>
-        <button type="submit" class="btn btn-secondary">Login</button>
+        <button type="submit" class="btn theme text-light mb-2">Login</button>
       </form>
-      <p class="text-center mt-2">
-        Don't have an account?
-        <a href="register.html">Register here</a>
-      </p>
     </div>
     <script>
       document.getElementById("loginForm").addEventListener("submit", (e) => {

@@ -1,10 +1,15 @@
 body {
-    background: #f4f4f4;
+    background: #f4f4f4 !important;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+  }
+
+  .theme{
+    background-color: #326872 !important;
   }
   
   .login-container {

@@ -69,7 +69,8 @@
         padding: 10px;
         cursor: pointer;
         text-align: center;
-        background-color: #5f666d;
+        background-color: #ffffff;
+        color: #333;
         border-radius: 5px;
         transition: background-color 0.3s;
       }
@@ -136,7 +137,8 @@
       }
 
       .btn:hover {
-        background-color: #398ccb;
+        color: white !important;
+        background-color: #326872;
       }
 
       iframe {
@@ -185,7 +187,11 @@
   <body>
     <div class="d-flex main-con">
       <div class="d-flex">
-        <div class="sidebar poppins bg-dark" id="sidebar">
+        <div
+          class="sidebar poppins"
+          id="sidebar"
+          style="background-color: #326872"
+        >
           <img
             id="sidebarProfilePicture"
             src="https://via.placeholder.com/120"
@@ -202,7 +208,7 @@
           <button id="logout">Logout</button>
         </div>
         <div
-          class="d-flex bg-light justify-content-center text-dark align-items-center"
+          class="d-flex justify-content-center bg-light text-dark align-items-center"
           style="height: 100vh; width: 50px"
         >
           <i
@@ -214,7 +220,7 @@
       </div>
     </div>
 
-    <div class="content bg-light poppins" id="content"></div>
+    <div class="content poppins bg-light" id="content"></div>
 
     <script>
       const toggleSidebar = () => {
@@ -250,7 +256,7 @@
         // Load the Home content
         const loadHomeContent = () => {
           contentDiv.innerHTML = `
-      <h2>Dashboard: </h2>
+      <h2 class="text-dark mb-4">Welcome to your Dashboard </h2>
       <iframe src="https://calendar.google.com/calendar/embed?src=en.philippine%23holiday%40group.v.calendar.google.com&ctz=Asia%2FManila" style="border: 0" frameborder="0" scrolling="no"></iframe>
     `;
         };
@@ -260,11 +266,11 @@
           const profilePictureSrc =
             loggedInUser?.profilePicture || "https://via.placeholder.com/150";
           contentDiv.innerHTML = `
-    <h2>Edit Profile Picture</h2>
+    <h2 class="text-dark">Edit Profile Picture</h2>
     <div class="profile-picture-container d-flex flex-column justify-content-center align-items-center">
       <img id="profilePicturePreview" src="${profilePictureSrc}" alt="Profile Picture Preview" class="profile-picture" />
     </div>
-    <div class="upload-section">
+    <div class="upload-section text-dark">
       <p>Click the profile to select new picture</p>
       <input type="file" id="profilePictureInput" accept="image/*" class="upload-input d-none" />
       <button id="updateProfilePicture" class="btn">Update Picture</button>
@@ -345,8 +351,8 @@
         // Load the Settings content
         const loadSettingsContent = () => {
           contentDiv.innerHTML = `
-    <h2>Edit Account Details</h2>
-    <form id="settingsForm" class="settings-form">
+    <h2 class="text-dark">Edit Account Details</h2>
+    <form id="settingsForm" class="settings-form text-dark">
       <div class="form-group">
         <label for="settingsEmail">Email</label>
         <input type="email" id="settingsEmail" value="${
@@ -408,7 +414,7 @@
 
         // Logout functionality
         logoutButton.addEventListener("click", () => {
-          // localStorage.clear();
+          localStorage.clear();
           alert("Logged out successfully!");
           location.href = "login.html";
         });

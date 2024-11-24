@@ -23,6 +23,28 @@
     <title>Register</title>
   </head>
   <body>
+    <div
+      class="w-100 poppins d-flex justify-content-between align-items-center"
+      style="background-color: #326872"
+    >
+      <div class="d-flex justify-content-center align-items-center ms-5">
+        <p class="m-0 text-light fs-2">Dash</p>
+      </div>
+      <div class="d-flex mx-5 gap-3">
+        <a
+          href="login.html"
+          class="btn btn-light border border-3 rounded-pill w-auto px-4 my-3"
+        >
+          Log In
+        </a>
+        <a
+          href="register.html"
+          class="btn btn-success rounded-pill w-auto p-2 px-4 my-3"
+        >
+          Sign Up
+        </a>
+      </div>
+    </div>
     <div class="login-container poppins rounded shadow-lg p-4">
       <h2>Register</h2>
       <form id="registerForm">
@@ -48,13 +70,8 @@
           <label for="profilePicture">Profile Picture (Optional)</label>
           <input type="file" id="profilePicture" accept="image/*" />
         </div>
-        <button type="submit" class="btn btn-secondary">Register</button>
+        <button type="submit" class="btn theme text-light">Register</button>
       </form>
-
-      <p class="text-center mt-3">
-        Already have an account?
-        <a href="login.html">Login here</a>
-      </p>
     </div>
     <script>
       document
