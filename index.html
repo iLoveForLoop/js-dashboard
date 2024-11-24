@@ -27,8 +27,12 @@
         margin: 0;
       }
 
+      .theme-color {
+        color: #326872 !important;
+      }
+
       .sidebar {
-        background-color: #2c3e50;
+        background-color: #326872;
         color: white;
         width: 250px;
         padding: 20px;
@@ -187,11 +191,7 @@
   <body>
     <div class="d-flex main-con">
       <div class="d-flex">
-        <div
-          class="sidebar poppins"
-          id="sidebar"
-          style="background-color: #326872"
-        >
+        <div class="sidebar poppins" id="sidebar">
           <img
             id="sidebarProfilePicture"
             src="https://via.placeholder.com/120"
@@ -208,13 +208,14 @@
           <button id="logout">Logout</button>
         </div>
         <div
-          class="d-flex justify-content-center bg-light text-dark align-items-center"
+          class="d-flex justify-content-center bg-light theme-color align-items-center"
           style="height: 100vh; width: 50px"
         >
           <i
             id="icon"
             onclick="toggleSidebar()"
             class="icon bi bi-caret-left-fill fs-1"
+            style="color: #326872"
           ></i>
         </div>
       </div>
@@ -256,7 +257,7 @@
         // Load the Home content
         const loadHomeContent = () => {
           contentDiv.innerHTML = `
-      <h2 class="text-dark mb-4">Welcome to your Dashboard </h2>
+      <h2 class="theme-color mb-4">Welcome to your Dashboard </h2>
       <iframe src="https://calendar.google.com/calendar/embed?src=en.philippine%23holiday%40group.v.calendar.google.com&ctz=Asia%2FManila" style="border: 0" frameborder="0" scrolling="no"></iframe>
     `;
         };
@@ -266,11 +267,11 @@
           const profilePictureSrc =
             loggedInUser?.profilePicture || "https://via.placeholder.com/150";
           contentDiv.innerHTML = `
-    <h2 class="text-dark">Edit Profile Picture</h2>
+    <h2 class="theme-color">Edit Profile Picture</h2>
     <div class="profile-picture-container d-flex flex-column justify-content-center align-items-center">
       <img id="profilePicturePreview" src="${profilePictureSrc}" alt="Profile Picture Preview" class="profile-picture" />
     </div>
-    <div class="upload-section text-dark">
+    <div class="upload-section theme-color">
       <p>Click the profile to select new picture</p>
       <input type="file" id="profilePictureInput" accept="image/*" class="upload-input d-none" />
       <button id="updateProfilePicture" class="btn">Update Picture</button>
@@ -351,8 +352,8 @@
         // Load the Settings content
         const loadSettingsContent = () => {
           contentDiv.innerHTML = `
-    <h2 class="text-dark">Edit Account Details</h2>
-    <form id="settingsForm" class="settings-form text-dark">
+    <h2 class="theme-color">Edit Account Details</h2>
+    <form id="settingsForm" class="settings-form theme-color">
       <div class="form-group">
         <label for="settingsEmail">Email</label>
         <input type="email" id="settingsEmail" value="${
@@ -414,7 +415,7 @@
 
         // Logout functionality
         logoutButton.addEventListener("click", () => {
-          localStorage.clear();
+          // localStorage.clear();
           alert("Logged out successfully!");
           location.href = "login.html";
         });
