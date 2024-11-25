@@ -26,20 +26,23 @@
     <div class="d-flex main-con">
       <div class="d-flex">
         <div class="sidebar poppins" id="sidebar">
-          <img
-            id="sidebarProfilePicture"
-            src="https://via.placeholder.com/120"
-            alt="Profile Picture"
-            class="sidebar-profile-picture"
-          />
-          <nav>
-            <ul>
-              <li id="homeTab">Home</li>
-              <li id="profileTab">Profile</li>
-              <li id="settingsTab">Settings</li>
-            </ul>
-          </nav>
-          <button id="logout">Logout</button>
+          <div class="d-flex flex-column gap-2 w-100">
+            <img
+              id="sidebarProfilePicture"
+              src="https://via.placeholder.com/120"
+              alt="Profile Picture"
+              class="sidebar-profile-picture"
+            />
+            <nav>
+              <ul>
+                <li class="rounded-pill" id="homeTab">Home</li>
+                <li class="rounded-pill" id="profileTab">Profile</li>
+                <li class="rounded-pill" id="settingsTab">Settings</li>
+              </ul>
+            </nav>
+          </div>
+
+          <button class="rounded-pill" id="logout">Logout</button>
         </div>
         <div
           class="d-flex justify-content-center bg-light theme-color align-items-center"
@@ -77,7 +80,6 @@
 
         const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
-        // Load the user's profile picture in the sidebar
         const loadSidebarProfilePicture = () => {
           if (loggedInUser && loggedInUser.profilePicture) {
             sidebarProfilePicture.src = loggedInUser.profilePicture;
@@ -86,7 +88,7 @@
 
         loadSidebarProfilePicture();
 
-        //Home
+        //Home ni
         const loadHomeContent = () => {
           contentDiv.innerHTML = `
       <h2 class="theme-color mb-4">Welcome to your Dashboard </h2>
@@ -94,7 +96,7 @@
     `;
         };
 
-        //Profile
+        //Profile ni
         const loadProfileContent = () => {
           const profilePictureSrc =
             loggedInUser?.profilePicture || "https://via.placeholder.com/150";
@@ -178,7 +180,7 @@
           });
         };
 
-        //Settings
+        //Settings ni
         const loadSettingsContent = () => {
           contentDiv.innerHTML = `
     <h2 class="theme-color">Edit Account Details</h2>
@@ -239,7 +241,7 @@
         loadHomeContent();
 
         logoutButton.addEventListener("click", () => {
-          // localStorage.clear();
+          localStorage.clear();
           alert("Logged out successfully!");
           location.href = "login.html";
         });
