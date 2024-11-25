@@ -88,7 +88,7 @@
             if (users.some((user) => user.email === email)) {
               alert("Email is already registered. Please use another email.");
             } else {
-              let profilePictureURL = ""; // Placeholder for the image URL or base64 data
+              let profilePictureURL = ""; 
               if (profilePicture) {
                 const reader = new FileReader();
                 reader.onload = () => {
@@ -102,9 +102,9 @@
                   alert("Registration successful!");
                   location.href = "login.html";
                 };
-                reader.readAsDataURL(profilePicture); // Converts image to base64
+                reader.readAsDataURL(profilePicture); 
               } else {
-                users.push({ email, password, profilePicture: "" }); // No image uploaded
+                users.push({ email, password, profilePicture: "" }); 
                 localStorage.setItem("users", JSON.stringify(users));
                 alert("Registration successful!");
                 location.href = "login.html";
